@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "one" {
-  bucket = "pavithra1flm.monobucket"
+  bucket = "pavithra98.monobucket"
 }
 
 resource "aws_s3_bucket_ownership_controls" "two" {
@@ -23,3 +23,10 @@ status = "Enabled"
 }
 }
 
+terraform {
+backend "s3" {
+region = "eu-north-1"
+bucket = "pavithra98.monobucket"
+key = "prod/terraform.tfstate"
+}
+}
